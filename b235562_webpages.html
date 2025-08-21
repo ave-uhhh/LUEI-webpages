@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Bebas Neue" rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel='stylesheet'>
+    <title>Land Use in South Africa</title>
+    <style>
+        body {
+            background-color: #fbf0dc;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        header {
+            font-family: 'Bebas Neue';
+            font-size: 4vw;
+            color: #fbf0dc;
+            position: absolute;
+            top: 5%;
+            right: 10%;
+            line-height: 1;
+            text-align: center;
+            transform: translate(10%, -10%);
+        }
+        nav {
+            background: #4b3c31;
+            padding: 0.25cm 0.2cm; 
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 20px; 
+            flex-wrap: nowrap; 
+        }
+        nav a {
+            color: #fbf0dc;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 0.25cm 0.5cm;
+        }
+        nav a:hover {
+            color: #fadbbc;
+            text-decoration: underline;
+        }
+        nav a.active {
+            color: #fadbbc;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        h2 {
+            background: #4b3c31;
+            font-family: 'Montserrat', sans-serif;
+            color: #fbf0dc;
+            padding-left: 0.25cm;
+        }
+        .link {
+            text-decoration: none;
+            color: #000000; 
+        }
+        .link:hover {
+            color: #d85d30;
+            text-decoration: underline;
+        }
+        .column {
+            float: left;
+            width: 48%;
+            padding: 1%;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .row {
+            width: 100%;
+            margin: 0 auto;
+        }
+        section {
+            padding: 15px;
+            min-height: 100vh;
+        }
+        footer {
+            background: #4b3c31;
+            color: #fbf0dc;
+            padding: 5px 10px;
+        } 
+        .references a {
+            color: #fbf0dc;
+        }
+        .references li {
+            margin-left: 0px;
+            padding-left: 25px;
+            text-indent: -25px; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="https://github.com/ave-uhhh/LUEI-webpages/blob/main/sa.jpg?raw=true" alt="Giraffe Top">
+        <header>
+            <h1>Land Use In<br>South Africa</h1>
+        </header>
+    </div>
+
+    <nav>
+        <a href="#section1" id="link-section1">Overview</a>
+        <a href="#section2" id="link-section2">History</a>
+        <a href="#section3" id="link-section3">Agriculture</a>
+        <a href="#section4" id="link-section4">Socio Economic</a>
+        <a href="#section5" id="link-section5">Biodiversity and Conservation</a>
+        <a href="#section6" id="link-section6">Mining</a>
+        <a href="#section7" id="link-section7">Forestry</a>
+    </nav>
+
+    <script>
+        const navLinks = document.querySelectorAll("nav a");
+        function setActiveLink() {
+            navLinks.forEach(link => {
+                const section = document.querySelector(link.getAttribute("href"));
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", setActiveLink);
+        setActiveLink();
+    </script>
+
+<div class="content">
+    <section id="section1">
+        <h2>Overview</h2>
+        <p>South Africa’s land use is shaped by its diverse geography and complex economic and social history. 
+            Spanning nearly 1.2 million square kilometers, South Africa is rich in both biodiversity and cultural diversity, boasting a variety of landscapes 
+            and inhabitants<a href="#ref1" class="link"><sup>1</sup></a>. 
+            The country is divided into nine provinces <a href="#fig1" class="link">(fig 1)</a>, although nearly half of the population reside in just two: 
+            Gauteng and KwaZulu Natal <a href="#fig2" class="link">(fig 2)</a>. 
+            As a result of its political and economic history, South Africa is the most urbanized country in sub-Saharan Africa, with approximately 62% of the 
+            population living in urban areas<a href="#ref1" class="link"><sup>1</sup></a>.</p>
+        <div class="row">
+            <div class="column">
+                <figure id="fig1">
+                    <img src="https://github.com/ave-uhhh/LUEI-webpages/blob/main/fig1.jpg?raw=true" alt="South African Provinces" width="100%">
+                    <figcaption><a href="https://github.com/ave-uhhh/LUEI-webpages/blob/main/fig1.jpg?raw=true" class="link">[Click to Enlarge]</a><br>Fig 1. South African provinces<a href="#ref2" class="link"><sup>2</sup></a>.</figcaption>
+                </figure>
+            </div>
+            <div class="column">
+                <figure id="fig2">
+                    <img src="https://github.com/ave-uhhh/LUEI-webpages/blob/main/fig2.jpg?raw=true" alt="Population Distribution of South Africa" width="100%">
+                    <figcaption><a href="https://github.com/ave-uhhh/LUEI-webpages/blob/main/fig2.jpg?raw=true" class="link">[Click to Enlarge]</a><br>Fig 2. South Africa population distribution by race and city across provinces<a href="#ref3" class="link"><sup>3</sup></a>.</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <figure id="fig3">
+                    <iframe width="100%" height="315" allowfullscreen
+                        src="https://www.youtube.com/embed/WAb4t9mJ1rA?si=qKPwVBL6kX9BV68f">
+                    </iframe>
+                    <figcaption>Fig 3. An overview of South Africa's diverse landscapes and wildlife.</figcaption>
+                </figure>   
+            </div>
+            <div class="column">
+                <p>South Africa’s varied ecosystems, including plateaus, plains, bush, and deserts, support a host of plant and animal species <a href="#fig3" class="link">(fig 3)</a>, 
+                    much of which are endemic to the region<a href="#ref4" class="link"><sup>4</sup></a>. The country is well known for its abundant wildlife, 
+                    protected through well-established parks and reserves that support many opportunities for wildlife tourism.</p>
+            </div>
+        </div>
+        <p>While land cover is mainly grassland, cropland takes up a significant portion of land use due to the country’s moderate climate, which is suitable to 
+            agriculture<a href="#ref4" class="link"><sup>4</sup></a>. 
+            Despite its sustainability goals, South Africa faces significant land issues; almost 60% of the land is degraded, and 91% is prone to 
+            desertification<a href="#ref5" class="link"><sup>5</sup></a>. 
+            Major threats to biodiversity stem from agriculture, human development and settlements, plantation forestry, mining, and infrastructure 
+            development<a href="#ref4" class="link"><sup>4</sup></a>. 
+            These issues are rooted in the country’s long history of colonialism and systemic racism that shaped land use and ownership patterns<a href="#ref1" class="link"><sup>1</sup></a>. 
+            The legacy of apartheid left pervasive inequalities in land ownership and access that influence how land is managed and used 
+            today<a href="#ref1" class="link"><sup>1</sup></a>. 
+            Land use is highly influenced by development goals and natural resource management, but in a post-Apartheid society, the land management system 
+            and spatial landscape is highly fragmented and disjointed<a href="#ref6" class="link"><sup>6</sup></a>. 
+            Balancing natural resource management, historic land ownership patterns, and competing demands of development, agriculture, and conservation remains a 
+            complex and ongoing challenge for South Africa.</p>
+    </section>
+
+    <section id="section2">
+        <h2>History</h2>
+        <p>South African land has a highly divisive history shaped by over a century of colonialism and apartheid. 
+            The Group Areas Act of 1950 created “homelands” for the sole occupa-tion of different racial and ethnic groups with buffer zones separating areas 
+            inhabited by white South Africans <a href="#fig4" class="link">(fig 4)</a><a href="#ref5" class="link"><sup>5</sup></a>. 
+            The act de-integrated rural and urban areas by mandating forced removal and relocation of nearly 3.5 million 
+            people<a href="#ref5" class="link"><sup>5</sup></a>. 
+            White urban cores allowed only minor black populations, creating rural, peri-urban, and metropolitan racially segregated 
+            areas<a href="#ref1" class="link"><sup>1</sup></a>. 
+            Informal settlements often appeared in buffer zones as black, Indian, and mixed townships were established outside of city 
+            centers <a href="#fig5" class="link">(fig 5)</a><a href="#ref1" class="link"><sup>1</sup></a>.</p>
+        <div class="row">
+            <div class="column">
+                <figure id="fig4">
+                    <img src="https://github.com/ave-uhhh/LUEI-webpages/blob/main/fig4.jpg?raw=true" alt="South Africa's provinces and homelands prior to 1996" width="100%">
+                    <figcaption><a href="https://github.com/ave-uhhh/LUEI-webpages/blob/main/fig4.jpg?raw=true" class="link">[Click to Enlarge]</a><br>Fig 4. 'Homelands' created during Apartheid in South Africa<a href="#ref7" class="link"><sup>7</sup></a>.</figcaption>
+                </figure>     
+            </div>
+            <div class="column">
+                <figure id="fig5">
+                    <img src="https://github.com/ave-uhhh/LUEI-webpages/blob/main/fig5.png?raw=true" alt="Structure of a city in South Africa during Apartheid" width="100%">
+                    <figcaption><a href="https://github.com/ave-uhhh/LUEI-webpages/blob/main/fig5.png?raw=true" class="link">[Click to Enlarge]</a><br>Fig 5. Structure of a segregated South Africa city during Apartheid<a href="#ref8" class="link"><sup>8</sup></a>.</figcaption>
+                </figure>   
+            </div>
+        </div>
+        <p>Black settlements and rural areas had little to no management during Apartheid<a href="#ref1" class="link"><sup>1</sup></a>.
+            The resulting environmental consequences were devastating to land and soil quality<a href="#ref6" class="link"><sup>6</sup></a>.
+            Subsistence in homelands relied on small agricultural plots; with high population and livestock densities living within these confined spaces, 
+            rangelands became severely degraded, causing erosion issues that the nation faces today<a href="#ref5" class="link"><sup>5</sup></a>. 
+            Resource based livelihoods are disproportionately vulnerable to land degradation, furthering contributing to climate related 
+            poverty<a href="#ref5" class="link"><sup>5</sup></a>.</p>
+        <p>Apartheid systems created land use patterns that are difficult to fully dismantle and resolve even three decades later. 
+            At its close, white South Africans held 84% of non-public land, and formally white urban areas retained political and economic 
+            control<a href="#ref1" class="link"><sup>1</sup></a>. 
+            Apartheid’s legacy has left its mark on agriculture as well. Large commercial farms are generally managed by white South Africans, and smaller, 
+            subsistence farms in communal areas are predominantly owned by Black farmers<a href="#ref1" class="link"><sup>1</sup></a>.
+            Land reform has been slow; only 3 million of 82 million hectares have been reclaimed, perpetuating historic land management inequality and 
+            unequal access to natural resources and continuing environmental racism<a href="#ref1" class="link"><sup>1</sup></a>.
+            Post apartheid reforms have struggled to reconcile national and international commitments to address degradation, 
+            reduce carbon emissions, and reach Sustainable Development Goals<a href="#ref5" class="link"><sup>5</sup></a>.</p>
+        <p>Climate change, historic land tenure, and limited post-apartheid reforms have created a perfect storm for land degradation. 
+            In addition to erosion, communal rangelands are under threat from woody encroachment<a href="#ref5" class="link"><sup>5</sup></a>.
+            In response to increased tree and shrub densities in savanna ecosystems, rangeland productivity 
+            declined<a href="#ref5" class="link"><sup>5</sup></a>. 
+            Reduced water supply, carrying capacity, biodiversity, and carbon storage capacity disrupt traditional grassland ecosystem 
+            functions<a href="#ref5" class="link"><sup>5</sup></a>.</p>
+    </section>
+
+    <section id="section3">
+        <h2>Agriculture</h2>
+        <p>Agriculture plays a significant role in South Africa’s economy, occupying approximately 10% of its land area<a href="#ref4" class="link"><sup>4</sup></a>. 
+            However, South Africa’s agricultural potential is relatively low compared to other regions of the globe.
+            Due to the semi-arid climate, only 12% of land is considered arable despite 81.7% being classified as 
+            agricultural<a href="#ref9" class="link"><sup>9</sup></a>. 
+            Agricultural activities primarily include livestock farming- particularly cattle and goats- maize, wheat, citrus, sugarcane and wine grape 
+            production<a href="#ref5" class="link"><sup>5</sup></a>. Crop distribution varies across the country, with the Western Cape contributing fruit 
+            and viticulture, while the Highveld produces maize<a href="#ref5" class="link"><sup>5</sup></a>. 
+            Agricultural distribution is characterized by co-ops in estates, and subsistence farms in rural areas<a href="#ref10" class="link"><sup>10</sup></a>.</p>
+        <p>Over the past 20 years, cropland decreased by about 22%, indicating a potential shift towards a post-agrarian 
+            society<a href="#ref10" class="link"><sup>10</sup></a>. 
+            Consumption patterns in South Africa reflect a mix of traditional and contemporary preferences, although the traditional diet is facing an increasing 
+            demand for processed foods<a href="#ref1" class="link"><sup>1</sup></a>.
+            During the same period, agricultural production has increasingly shifted towards soybean, with soybean cropland increasing by 679% while maize and 
+            wheat cropland declined by 43% and 42% respectively<a href="#ref10" class="link"><sup>10</sup></a>.</p>
+        <p>South Africa’s agricultural sector is the most developed in Africa, positioning the nation as a leading exporter 
+            within the region<a href="#ref11" class="link"><sup>11,</sup></a><a href="#ref1" class="link"><sup>1</sup></a>. 
+            However, the sector faces significant challenges driven by biophysical, institutional, and socioeconomic factors, including water scarcity, 
+            inconsistent energy supply, land degradation, and the impacts of climate change<a href="#ref1" class="link"><sup>1,</sup></a><a href="#ref5" class="link"><sup>5</sup></a>. 
+            Climate change, in particular, has increased the likelihood of severe droughts in arable lands as average temperatures soar and rainfall 
+            declines <a href="#fig6" class="link">(fig 6)</a><a href="#ref11" class="link"><sup>11</sup></a>. 
+            These issues are exacerbated by historic land management inequality and unequal access to natural resources<a href="#ref5" class="link"><sup>5</sup></a>.</p>
+        <figure id="fig6">
+            <img src="https://showyourstripes.info/stripes/AFRICA-South_Africa-%3CAll%20of%20South_Africa%3E-1881-2023-BK-barslabel.png" alt="Temperature change in South Africa" width="40%">
+            <figcaption><a href="https://showyourstripes.info/stripes/AFRICA-South_Africa-%3CAll%20of%20South_Africa%3E-1881-2023-BK-barslabel.png" class="link">[Click to Enlarge]</a><br>Fig 6. Average temperatures have massively increased based on a 1961-2010 average. For more information see <a href="https://showyourstripes.info/c/globe" class="link">Show Your Stripes</a><a href="#ref12" class="link"><sup>12</sup></a>.</figcaption>
+        </figure>
+        <p>High value crops are grown in areas with more secure water resources due to their need for intensive irrigation. 
+            Rainfed agriculture can be found in the regions with the highest rainfall, such as Kwa-Zulu Natal, Mpumalanga, and the Eastern 
+            Cape<a href="#ref10" class="link"><sup>10</sup></a>. 
+            Dry regions concentrate on livestock production and wildlife farming, as agricultural production is limited by scare water resources which limit 
+            irrigation capacity<a href="#ref10" class="link"><sup>10</sup></a>. 
+            Balancing land and water requirements is a complex issue when considering the impacts of agriculture. 
+            Sugarcane, for instance, is a land and water intensive monocrop that relies heavily on fertilizers and 
+            pesticides<a href="#ref13" class="link"><sup>13</sup></a>. 
+            Continuous heavy reliance on nitrogenous fertilizers lowers soil pH, eventually leading to acidification and buildup of heavy metals<a href="#ref13" class="link"><sup>13</sup></a>. 
+            This soil degradation and fertility loss threaten an already precarious percentage of arable land in South Africa<a href="#ref13" class="link"><sup>13</sup></a>. 
+            Additionally, the production of sugarcane releases significant carbon when fields are burned during harvesting<a href="#ref13" class="link"><sup>13</sup></a>.</p>
+    </section>
+
+    <section id="section4">
+        <h2>Socio Economic</h2>
+        <p>Recent development and urbanization trends in South Africa have significantly reshaped land use patterns, 
+            driven by factors such as economic opportunity, population growth, and historic migration trends, particularly in the years post-Apartheid. 
+            The country’s urban population is on the rise <a href="#fig7" class="link">(fig 7)</a>, particularly in major cities like Johannesburg, Durban, and 
+            Cape Town<a href="#ref14" class="link"><sup>14</sup></a>. Urban sprawl puts pressure on land resources and presents complex challenges for 
+            urban planning and development, especially with the continued growth of informal settlements<a href="#ref15" class="link"><sup>15</sup></a>.</p>
+        <figure id="fig7">
+            <iframe src="https://data.worldbank.org/share/widget?end=2023&indicators=SP.URB.TOTL&locations=ZA&start=1996" 
+            width="40%" 
+            height="350"
+            frameBorder='0' 
+            scrolling="no"></iframe>
+            <figcaption>Fig 7. South African cities have seen a steady rise in population in the years post-Apartheid<a href="#ref14" class="link"><sup>14</sup></a>.</figcaption>
+        </figure>
+        <p>South Africa’s status as one of the most industrialized nations on the continent can be attributed to its strong 
+            tourism industry, with popular destinations like Cape Town and Kruger National Park attracting international 
+            visitors<a href="#ref1" class="link"><sup>1,</sup></a><a href="#ref16" class="link"><sup>16</sup></a>. 
+            The services sector dominates the nation’s GDP, which has grown 3.3% in the past two decades<a href="#ref6" class="link"><sup>16</sup></a>. 
+            Despite economic growth, unemployment remains high at over 25%<a href="#ref17" class="link"><sup>17</sup></a>. 
+            Regarded as one of the most unequal countries globally, the wealth gap is remarkable: the top 0.01% hold 86% of total net wealth, while the bottom 
+            50% of the population holds negative net worth<a href="#ref17" class="link"><sup>17</sup></a>. 
+            Urban population growth has surged in response to GDP, rising by approximately 5% over the last decade from 63.79% to 68.82% in 
+            2023<a href="#ref18" class="link"><sup>18</sup></a>. 
+            Notably, due to wealth distribution and historic land trends, 26% of urban dwellers live in informal settlements, with this number continually 
+            growing<a href="#ref19" class="link"><sup>19</sup></a>. 
+            Although many of these settlements originated from forced segregation during the Apartheid era, rapid urbanization has further deepened socio-economic 
+            inequalities and economic barriers remain prevalent, leading to further growth in informal 
+            settlements<a href="#ref1" class="link"><sup>1</sup></a>.</p>
+        <p>Informal settlements are frequently located near riverbanks, flood plains, and wetlands, placing them at disproportionate risk for environmental 
+            hazards, particularly floods<a href="#ref19" class="link"><sup>19</sup></a>. 
+            In Cape Town, for instance, informal settlements are concentrated in the Cape Flats, low-lying areas to the south and 
+            east<a href="#ref19" class="link"><sup>19</sup></a>. 
+            Khayelitsha, located outside Cape Town, is the largest informal settlement in the country, with 391,747 people living on 38.71 
+            km²<a href="#ref20" class="link"><sup>20</sup></a>. 
+            These densely populated settlements are often built illegally on government land and virtually nonexistent land regulation results in encroachment into 
+            natural environments<a href="#ref15" class="link"><sup>15</sup></a>. 
+            Significant pressure has been put on the fynbos biome in the Western Cape, an environmentally critical shrubland ecosystem that is 
+            recognized globally as a biodiversity hotspot<a href="#ref21" class="link"><sup>21</sup></a>. 
+            Not only does the unregulated expansion of informal settlements fragment and destroy the fragile fynbos ecosystem, it threatens the biodiversity and 
+            soil structure of the impacted land as well<a href="#ref21" class="link"><sup>21</sup></a>.</p>
+    </section>
+
+    <section id="section5">
+        <h2>Biodiversity and Conservation</h2>
+        <p>South Africa is considered one of the world’s most biologically diverse nations, home to 10% of the world’s plant species and 7% of reptile, bird, and 
+            mammal species<a href="#ref22" class="link"><sup>22</sup></a>. 
+            Endemism rates are exceptionally high, with 56% of amphibians, 65% of plants, and almost 70% of invertebrates found only in 
+            South Africa<a href="#ref22" class="link"><sup>22</sup></a>. 
+            Given its rich biodiversity, protected areas (PA’s) play a crucial role in conservation, yet fencing may have unintended 
+            consequences<a href="#ref23" class="link"><sup>23</sup></a>.</p>
+        <p>When implemented and managed well, fences around protected areas can benefit both wildlife and nearby human communities<a href="#ref24" class="link"><sup>24</sup></a>. 
+            Protected areas in South Africa are often situated near local communities and agricultural activities, where demarcation can reduce encroachment and protect 
+            crops and livestock from grazing and predators<a href="#ref23" class="link"><sup>23</sup></a>. 
+            In reality, local communities are rarely involved in the decision-making process when creating a PA, causing friction<a href="#ref25" class="link"><sup>25</sup></a>. 
+            Fences disrupt traditional ways of life by limiting access to resources, altering travel routes, and, in some cases, displacing 
+            communities<a href="#ref25" class="link"><sup>25</sup></a>. 
+            For many, fences are reminders of colonial and Apartheid era policies of land appropriation and exclusion, underscoring the importance of including 
+            affected communities in the planning and creation of PA’s<a href="#ref23" class="link"><sup>23</sup></a>.</p>
+        <p>From an ecological perspective, fences inhibit migration and dispersal, increasing pressure on species distribution and contributing to die offs of 
+            ungulates and other mammals when resources become scare<a href="#ref23" class="link"><sup>23</sup></a>.
+            These trends are expected to intensify with climate change, as animals may need to travel further to find adequate food and 
+            water<a href="#ref23" class="link"><sup>23</sup></a>. 
+            Further, protected areas must manage populations to prevent inbreeding and ensure genetic diversity, particularly in smaller 
+            areas<a href="#ref23" class="link"><sup>23</sup>.</p>
+        <p>The security of fenced protected areas is also a concern as impermeability depends on species-specific behavioral responses and the condition and 
+            construction of fences which require substantial funding to maintain<a href="#ref23" class="link"><sup>23</sup></a>. 
+            While rhinos and buffalo are easily contained, for instance, leopards and digging species like warthogs require more sophisticated containment 
+            infrastructure<a href="#ref23" class="link"><sup>23</sup></a>.
+            For animals such as elephants and lions that rely on vast territories to maintain healthy populations, fragmentation is especially harmful, sometimes 
+            leading to destructive feeding behaviors and other stress responses<a href="#ref23" class="link"><sup>23</sup></a>. 
+            However, fragmentation is not just a result of fencing; as human population grows, the developed landscape grows with it, encroaching on wildlife 
+            habitats. 
+            Protected areas remain crucial in conservation efforts, and as private game reserves cover 16% of the country <a href="#fig8" class="link">(fig 8)</a>, it is important that connectivity is 
+            ensured between these areas<a href="#ref24" class="link"><sup>24</sup></a>.</p>
+        <figure id="fig8">
+            <iframe width="50%" height="490" frameborder="0" src="https://www.globalforestwatch.org/embed/map/country/ZAF/?map=eyJjZW50ZXIiOnsibGF0IjotMjguNjkxMjEwNjM2MTg3OTA0LCJsbmciOjIzLjQ1MDE1MDk3MDc3ODU0NH0sInpvb20iOjUuMDM2MTQ5NDQ4OTQxNTMzLCJjYW5Cb3VuZCI6ZmFsc2UsImRhdGFzZXRzIjpbeyJkYXRhc2V0Ijoid2RwYS1wcm90ZWN0ZWQtYXJlYXMiLCJvcGFjaXR5IjoxLCJ2aXNpYmlsaXR5Ijp0cnVlLCJsYXllcnMiOlsid2RwYS1wcm90ZWN0ZWQtYXJlYXMiXX0seyJkYXRhc2V0IjoicG9saXRpY2FsLWJvdW5kYXJpZXMiLCJsYXllcnMiOlsiZGlzcHV0ZWQtcG9saXRpY2FsLWJvdW5kYXJpZXMiLCJwb2xpdGljYWwtYm91bmRhcmllcyJdLCJib3VuZGFyeSI6dHJ1ZSwib3BhY2l0eSI6MSwidmlzaWJpbGl0eSI6dHJ1ZX1dfQ%3D%3D&mapMenu=eyJzZWFyY2giOiJzb3V0aCAifQ%3D%3D&mapPrompts=eyJzdGVwc0tleSI6ImFuYWx5emVBbkFyZWEiLCJzdGVwc0luZGV4IjowLCJmb3JjZSI6dHJ1ZX0%3D"></iframe>
+            <figcaption>Figure 8. Interactive map of protected areas in South Africa. Different classifications denote different regulations related to land use<a href="#ref25" class="link"><sup>25</sup></a>.</figcaption>
+        </figure>
+    </section>
+
+ <section id="section6">
+    <h2>Mining</h2>
+    <p>Mining in South Africa plays a crucial role in the country’s economic growth, contributing to job creation and 
+        GDP<sup><a href="#ref27" class="link">27</a></sup>. 
+        The country is home to 522 mines and over 22 minerals; specifically, South Africa is the largest producer of coal, platinum, gold, and 
+        diamonds<sup><a href="#ref28" class="link">28</a></sup>.</p>
+     <p>The nation’s mineral wealth has driven mining for over a century with little to no regard for the environment, thus the socio-environmental consequences 
+         are substantial<sup><a href="#ref29" class="link">29</a></sup>. 
+         The long history of the industry has shaped legislature surrounding mining activities; regulatory gaps, poor enforcement, and biased land-use decisions 
+         continue to jeopardize both communities and the environment<sup><a href="#ref27" class="link">27</a></sup>. 
+         This poses significant environmental and social challenges, particularly for communities in mining-affected 
+         regions<sup><a href="#ref29" class="link">29</a></sup>.</p>
+    <p>Although there are regulations concerning mining activities and their impacts, mining companies in South Africa frequently neglect environmental laws, 
+        resulting in severe degradation of local ecosystems<sup><a href="#ref29" class="link">29</a></sup>. 
+        The Human Rights Commission notes that mining often commences prematurely, depriving communities of bargaining power and impacting their rights to fair 
+        compensation and relocation<sup><a href="#ref30" class="link">30</a></sup>. 
+        Further, the lack of stringent land-use guidelines allows mining companies to repurpose post-closure land 
+        arbitrarily<sup><a href="#ref30" class="link">30</a></sup>.  
+        Mining companies opt for the easiest and most cost-effective land restoration when mines close, rather than restore them to their post mining 
+        condition<sup><a href="#ref30" class="link">30</a></sup>. 
+        Degraded areas are often designated for low-cost housing or grazing which rarely meets the original restoration 
+        goals<sup><a href="#ref30" class="link">30</a></sup>.</p>
+    <p>Unfortunately, competing land-use policies tend to support mining activities over other sectors, such as agriculture and conservation, in favour of 
+        development and economic investments<sup><a href="#ref30" class="link">30</a></sup>. 
+        In the Mpumalanga province, the Department of Mineral Resources (DMR) accepts applications for rights <a href="#fig9" class="link">(fig 9)</a>, 
+        despite the importance of agriculture in the region<sup><a href="#ref29" class="link">29</a></sup>.
+        Due to the lack of arable soil in the country, this raises particularly poignant concerns for soil health and food 
+        security<sup><a href="#ref29" class="link">29</a></sup>.</p>
+    <figure id="fig9">
+        <img src="https://www.mineralscouncil.org.za/images/where-coal-is-mined-in-south-africa.png" alt="Locations of Coal Mines" width="40%">
+        <figcaption><a href="https://www.mineralscouncil.org.za/images/where-coal-is-mined-in-south-africa.png" class="link">[Click to Enlarge]</a><br>Fig 9. Locations of coal mines in South Africa are heavily concentrated in Mpumalanga, despite agricultural and conservation concerns<a href="#ref31" class="link"><sup>31</sup></a>.</figcaption>
+    </figure>
+    <p>Biodiversity is another casualty of mining expansion (Maze). In biodiversity-rich areas, mining activities compete directly with conservation 
+        efforts<sup><a href="#ref32" class="link">32</a></sup>. 
+        The DMR approves mining permits without local government consultation, enabling land transformation without stringent land-use 
+        controls<sup><a href="#ref32" class="link">32</a></sup>. 
+        This contributes to an irreversible loss of habitat in regions with high conservation value<sup><a href="#ref29" class="link">29</a></sup>. 
+        The long-term environmental impact has been profound. 
+        Strip mining leaves permanent scars on the landscape, leading to soil erosion, destruction of vegetation, and widespread land 
+        degradation<sup><a href="#ref29" class="link">29</a></sup>. 
+        In eMmalahleni, Mpumalanga, coal mining has degraded approximately 3.2 million hectares of land, with a slow restoration rate of only 
+        10-12%<sup><a href="#ref29" class="link">29</a></sup>.</p>
+</section>
+
+<section id="section7">
+    <h2>Forestry</h2>
+    <p>South Africa's forests cover approximately 32.7% of the country’s land surface, comprising three main categories: indigenous (natural) forests, wooded 
+        savannahs (woodlands), and industry (plantation) forests<sup><a href="#ref33" class="link">33</a></sup>. 
+        The country’s forests are protected by relatively strong legislation with the National Forests Act (1998) and the National Veld and Forest Fire 
+        Act (1998)<sup><a href="#ref33" class="link">33</a></sup>. 
+        These laws aim to protect forests by promoting conservation, sustainable development, and equitable distribution of their 
+        benefits<sup><a href="#ref33" class="link">33</a></sup>. 
+        These efforts recognize the economic, social, and environmental importance of forests while addressing the need to balance conservation with resource 
+        use<sup><a href="#ref33" class="link">33</a></sup>. 
+        Despite their importance, South Africa's forests face significant environmental and economic challenges. 
+        Tree cover declined significantly in the past two decades <a href="#fig10" class="link">(fig 10,</a> <a href="#fig10" class="link">fig 11)</a>, with KwaZulu-Natal and Mpumalanga contributing to 
+        70% of the total tree loss<sup><a href="#ref34" class="link">34</a></sup>.</p>
+    <div class="row">
+        <div class="column">
+            <figure id="fig10">
+                <iframe width="100%" height="560" frameborder="0" src="https://www.globalforestwatch.org/embed/widget/treeLoss/country/ZAF"></iframe>
+                <figcaption>Fig 10. Tree cover in South Africa has declined in the past two decades<a href="#ref34" class="link"><sup>34</sup></a>.</figcaption>
+            </figure>
+        </div>
+        <div class="column">
+            <figure>
+            <iframe width="100%" height="560" frameborder="0" src="https://www.globalforestwatch.org/embed/map/country/ZAF/?mainMap=eyJzaG93QW5hbHlzaXMiOnRydWV9&map=eyJjZW50ZXIiOnsibGF0IjotMjguNzQ2NDIzNzc4Mjg4MjY4LCJsbmciOjIyLjEzMjI0OTEzNzA0NjkwNX0sInpvb20iOjQuNjIyMDk4NTg2NTcyODU5LCJkYXRhc2V0cyI6W3siZGF0YXNldCI6InBvbGl0aWNhbC1ib3VuZGFyaWVzIiwibGF5ZXJzIjpbImRpc3B1dGVkLXBvbGl0aWNhbC1ib3VuZGFyaWVzIiwicG9saXRpY2FsLWJvdW5kYXJpZXMiXSwiYm91bmRhcnkiOnRydWUsIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWV9LHsiZGF0YXNldCI6InRyZWUtY292ZXItbG9zcyIsImxheWVycyI6WyJ0cmVlLWNvdmVyLWxvc3MiXSwib3BhY2l0eSI6MSwidmlzaWJpbGl0eSI6dHJ1ZSwidGltZWxpbmVQYXJhbXMiOnsic3RhcnREYXRlIjoiMjAwMS0wMS0wMSIsImVuZERhdGUiOiIyMDIzLTEyLTMxIiwidHJpbUVuZERhdGUiOiIyMDIzLTEyLTMxIn0sInBhcmFtcyI6eyJ0aHJlc2hvbGQiOjMwLCJ2aXNpYmlsaXR5Ijp0cnVlLCJhZG1fbGV2ZWwiOiJhZG0wIn19XX0%3D&mapMenu=eyJkYXRhc2V0Q2F0ZWdvcnkiOiJsYW5kVXNlIn0%3D&mapPrompts=eyJzdGVwc0tleSI6ImFuYWx5emVBbkFyZWEiLCJzdGVwc0luZGV4IjowLCJmb3JjZSI6dHJ1ZX0%3D"></iframe></figure>
+            <figcaption>Fig 11. Map of tree cover lost in South Africa in the past two decades<a href="#ref34" class="link"><sup>34</sup></a>.</figcaption>
+        </div>
+    </div>    
+    <p>South Africa is predominantly an unforested country, with indigenous forests constituting its smallest biome<sup><a href="#ref35" class="link">35</a></sup>. 
+        Natural forests account for only 0.9% of the total land area, and are small, fragmented, and dependent on a climate with no frost and high seasonal 
+        rainfall<sup><a href="#ref33" class="link">33</a></sup>. 
+        These forests play a critical role in biodiversity conservation and soil protection<sup><a href="#ref33" class="link">33</a></sup>.</p>
+    <p> Woodlands, the largest category by area, span 39 million hectares and are primarily found on communal lands, where they provide resources such as wood, 
+        fuel, and food to local communities<sup><a href="#ref33" class="link">33</a></sup>. 
+        However, they are often poorly managed and heavily exploited due to their extent and vastness<sup><a href="#ref33" class="link">33</a></sup>.</p>
+    <p>Plantation forests, covering 1.19 million hectares, are concentrated in provinces like KwaZulu-Natal, Mpumalanga, and the Eastern and Western 
+        Cape<sup><a href="#ref34" class="link">34</a></sup>. 
+        Forestry mainly employs exotic species like pine, eucalyptus, and wattle, to meet timber needs<sup><a href="#ref35" class="link">35</a></sup>. 
+        These exotic trees are considered invasive due to extensive geographic reach, population size, and negative impact of indigenous vegetation 
+        structures<sup><a href="#ref36" class="link">36</a></sup>.
+        Exotic plantations decrease streamflow by about 3% and increase evapotranspiration, altering catchment water yields<sup><a href="#ref35" class="link">34</a></sup>. 
+        These effects are especially significant in high-rainfall areas that are critical for water catchments, posing a major concern for the nation’s already scare water 
+        resources<sup><a href="#ref35" class="link">35</a></sup>. 
+        These issues prompted in a large-scale government initiative to eradicate invasive species<sup><a href="#ref36" class="link">36</a></sup>. 
+        The National Water Act (1998) was also amended to regulate land uses, such as forestry, by introducing a category of water use known as 'stream flow 
+        reduction activity'<sup><a href="#ref35" class="link">35</a></sup>.</p>
+    <p>Fires pose another critical risk, particularly in plantation forests established on fire-prone grasslands<sup><a href="#ref33" class="link">33</a></sup>. 
+        In the Western Cape, 17,000 fires were recorded in 2017, 2,000 of which originated in informal settlements<sup><a href="#ref34" class="link">34</a></sup>. 
+        Although forestry occupies a relatively small area, it contributes significantly to the economy<sup><a href="#ref33" class="link">33</a></sup>. 
+        Uncontrolled fires impact both local economies and industry, as well as increasing forest vulnerability to pests and 
+        diseases<sup><a href="#ref33" class="link">33</a></sup>.</p>
+</section>
+    
+</div>
+
+<footer>
+    <h3>References</h3>
+    <ol class="references">
+        <li id="ref1">
+            Ovens, W, du Plessis, J, Napier, M, Kitchin, F (2013). <i>Issues and Options for Improved Land Sector Governance in South Africa</i>. South Africa: Urban LandMark. Available at: 
+            <a href="https://thedocs.worldbank.org/en/doc/a91b90185037e5f11e9f99a989ac11dd-0050062013/related/South-Africa-Synthesis.pdf" target="_blank">https://thedocs.worldbank.org/en/doc/a91b90185037e5f11e9f99a989ac11dd-0050062013/related/South-Africa-Synthesis.pdf</a>
+            (Accessed 25 October 2024).</li>
+        <li id="ref2">
+            South Africa Gateway (2016). <i>South Africa’s Nine Provinces</i>. Available at:
+            <a href="https://southafrica-info.com/infographics/infographic-land-area-south-africas-nine-provinces/" target="_blank">https://southafrica-info.com/infographics/infographic-land-area-south-africas-nine-provinces/</a> 
+            (Accessed 16 November 2024).</li>
+        <li id="ref3">
+            South Africa Gateway (2011). <i>Distribution of South Africa’s Population</i>. Available at:
+            <a href="https://southafrica-info.com/infographics/infographic-maps-geographic-distribution-south-africa-races-population/" target="_blank">https://southafrica-info.com/infographics/infographic-maps-geographic-distribution-south-africa-races-population/ </a> 
+            (Accessed 16 November 2024).</li>
+        <li id="ref4">
+            FABLE Consortium (nd). <i>Transforming food and land-use systems in South Africa</i>. Available at: 
+            <a href="https://fableconsortium.org/south-africa/" target="_blank">https://fableconsortium.org/south-africa/</a>
+            (Accessed: 10 October 2024).</li>
+        <li id="ref5">
+            Mani, S, Osborne, CP, Cleaver, F (2021). ‘Land Degradation in South Africa: Justice and Climate Change in Tension’, <i>People and Nature</i>, 3, pp 978-989. 
+            <a href="https://www.researchgate.net/publication/354891899_Land_degradation_in_South_Africa_Justice_and_climate_change_in_tension" target="blank">doi:10.1002/pan3.10260</a></li>
+        <li id="ref6">
+            Nel, V (2016). ‘A Better Zoning System for South Africa?’, <i>Land Use Policy</i>, 55, pp 257–264. 
+            <a href="https://www.academia.edu/111463189/A_better_zoning_system_for_South_Africa" target="_blank">doi:https://doi.org/10.1016/j.landusepol.2016.04.007</a></li>
+        <li id="ref7">
+            South Africa Gateway (2016). South Africa’s Provinces and ‘Homelands’ Before 1996. Available at:
+            <a href="https://southafrica-info.com/infographics/provinces-homelands-south-africa-1996/" target="_blank">https://southafrica-info.com/infographics/provinces-homelands-south-africa-1996/</a> 
+            (Accessed 16 November 2024).</li>
+        <li id="ref8">
+            Davies, RJ (1981). ‘The Spatial Formation of the South African City’, <i>GeoJournal</i>, 2 pp 59-72. 
+            <a href="https://link.springer.com/article/10.1007/BF00196325" target="_blank">https://doi.org/10.1007/BF00196325</a></li>
+        <li id="ref9">
+            Leete, M, Damen, B, Rossi, A (2013). <i>South Africa: Country Brief</i>. Italy: The Food and Agriculture Organization of the United Nations. Available at:
+            <a href="https://www.fao.org/4/aq181e/aq181e.pdf" target="blank">https://www.fao.org/4/aq181e/aq181e.pdf</a>
+            (Accessed 07 November 2024). </li>
+        <li id="ref10">
+            Rötter, RP, Nkomo, M, zu Drewer, JM, Veste, M (2024). 'Agricultural Land-Use Systems and Management Challenges', In: von Maltitz, GP, et al. <i>Sustainability of Southern African Ecosystems under Global Change</i>. Springer, pp 551-568. Available at:
+            <a href="https://doi.org/10.1007/978-3-031-10948-5_20" target="blank">https://doi.org/10.1007/978-3-031-10948-5_20</a>
+            (Accessed 30 October 2024).</li>
+        <li id="ref11">
+            New Zealand Trade Enterprise (2023). <i>South Africa: Agriculture Opportunities</i>. New Zealand: Foreign Affairs and Trade. Available at:
+            <a href="https://www.mfat.govt.nz/assets/Trade-General/Trade-Market-reports/South-Africa-agriculture-opportunities-December-2023.pdf" target="blank"> https://www.mfat.govt.nz/assets/Trade-General/Trade-Market-reports/South-Africa-agriculture-opportunities-December-2023.pdf</a>
+            (Accessed 05 November 2024).</li>
+        <li id="ref12">
+            Hawkins, E (2023). <i>Temperature Change in South Africa</i>. Reading: University of Reading. Available at:
+            <a href="https://showyourstripes.info/c/africa/southafrica/all" target="_blank"> https://showyourstripes.info/c/africa/southafrica/all</a> 
+            (Accessed 18 November 2024).</li>
+        <li id="ref13">
+            Omwoma, S, Arowo, M, Lalah, JO, Schramm, KW (2014). 'Environmental Impacts of Sugarcane Production, Processing and Management: A Chemists Perspective', <i>Environmental Research Journal</i>, 8(3) pp 196-215. Available at:
+            <a href="https://www.researchgate.net/publication/272182420_Environmental_impacts_of_sugarcane_production_processing_and_management_A_chemist's_perspective" target="_blank">https://www.researchgate.net/publication/272182420_Environmental_impacts_of_sugarcane_production_processing_and_management_A_chemist's_perspective</a></li>
+        <li id="ref14">
+            World Bank (2018). <i>Urban Population- South Africa</i>. World Bank Group. Available at: 
+            <a href="https://data.worldbank.org/indicator/SP.URB.TOTL?end=2023&locations=ZA&start=1996" target="_blank">https://data.worldbank.org/indicator/SP.URB.TOTL?end=2023&locations=ZA&start=1996</a> 
+            (Accessed 18 November 2024).</li>
+        <li id="ref15">
+            Worcester Polytechnic Institute (nd). <i>Informal Settlements in South Africa: Langrug Community</i>. Available at:
+            <a href="https://wp.wpi.edu/capetown/projects/p2014/wash-up-business/background-research/informal-settlements-in-south-africa/#:~:text=Informal%20settlements%20are%20housing%20areas,in%20the%20village%20of%20Franschhoek" target="blank">https://wp.wpi.edu/capetown/projects/p2014/wash-up-business/background-research/informal-settlements-in-south-africa/#:~:text=Informal%20settlements%20are%20housing%20areas,in%20the%20village%20of%20Franschhoek</a>
+            (Accessed: 05 November 2024).</li>
+        <li id="ref16">
+            O’Neil, A (2024). <i>South Africa: Distribution of Gross Domestic Product (GDP) Across Economic Sectors from 2012 to 2022</i>. Available at:
+            <a href="https://www.statista.com/statistics/371233/south-africa-gdp-distribution-across-economic-sectors/" target="blank">https://www.statista.com/statistics/371233/south-africa-gdp-distribution-across-economic-sectors/</a>
+            (Accessed: 05 November 2024).</li>
+        <li id="ref17">
+            Chatterjee, A, Czajka, L, Gethin, A (2020). <i>Estimating the Distribution of Household Wealth in South Africa</i>. South Africa: United Nations University WIDER. Available at:
+            <a href="https://sa-tied-archive.wider.unu.edu/sites/default/files/pdf/SA-TIED-WP-106.pdf" target="blank">https://sa-tied-archive.wider.unu.edu/sites/default/files/pdf/SA-TIED-WP-106.pdf</a>
+            (Accessed (03 November 2024).</li>
+        <li id="ref18">
+            O’Neil, A (2024). <i>South Africa: Urbanization from 2013 to 2023</i>. Available at:
+            <a href="https://www.statista.com/statistics/455931/urbanization-in-south-africa/" target="blank">https://www.statista.com/statistics/455931/urbanization-in-south-africa/</a> 
+            (Accessed: 05 November 2024).</li>
+        <li id="ref19">
+            Cinnamon, J & Noth, T (2023). ‘Spatiotemporal Development of Informal Settlements in Cape Town, 2000 to 2020: An Open Data Approach’, <i>Habitat International</i>, 133. 
+            <a href="https://www.sciencedirect.com/science/article/pii/S0197397523000139" target="_blank">//doi.org/10.1016/j.habitatint.2023.102753</a></li>
+        <li id="ref20">
+            Sikhula Sonke Early Childhood Development (nd). <i>Khayelitsha, the ‘New Home’</i>. Available at:
+            <a href="https://www.sikhulasonke.org.za/about-khayelitsha.html" target="blank">https://www.sikhulasonke.org.za/about-khayelitsha.html</a> 
+            (Accessed: 05 November 2024).</li>
+        <li id="ref21">
+            WWF (nd). <i>A Plant Paradise</i>. Available at
+            <a href="https://wwf.panda.org/discover/knowledge_hub/where_we_work/fynbos/" target="blank">https://wwf.panda.org/discover/knowledge_hub/where_we_work/fynbos/</a> 
+            (Accessed: 05 November 2024).</li>
+        <li id="ref22">
+            Convention on Biological Diversity (2015). <i>South Africa - Country Profile</i>. Available at:
+            <a href="https://www.cbd.int/countries/profile?country=za#:~:text=While%20it%20occupies%20only%202,up%20to%2070%25%20for%20invertebrates" target="blank">https://www.cbd.int/countries/profile?country=za#:~:text=While%20it%20occupies%20only%202,up%20to%2070%25%20for%20invertebrates</a> 
+            (Accessed: 05 November 2024).</li>   
+        <li id="ref23">
+            Pekar, A, Miller, JRB, Flyman, MV, Kasiki, S, Kesch, MK, Miller, Sm, Uiseb, K, van der Merve, V, Lindsey, PA (2019). ‘Fencing Africa’s Protected Areas: Costs, Benefits, and Management Issues’, <i>Biological Conservation</i>, 229 pp 67-75. 
+            <a href="https://www.researchgate.net/publication/329352537_Fencing_Africa's_protected_areas_Costs_benefits_and_management_issues" target="blank">//doi.org/10.1016/j.biocon.2018.10.030</a></li>   
+        <li id="ref24">
+            Pirie, TJ & Thomas, RL (2017). ‘Game Fence Presence and Permeability Influences the Local Movement and Distribution of South African Mammals’, <i>African Zoology</i>, 52(4) pp 217-227. 
+            <a href="https://www.researchgate.net/publication/321878585_Game_Fence_Presence_and_Permeability_Influences_the_Local_Movement_and_Distribution_of_South_African_Mammals" target="_blank">//doi.org/10.1080/15627020.2017.1410074</a></li>  
+        <li id="ref25">
+            Abukari, H & Mwalyosi, RB (2019). 'Local Communities' Perceptions About the Impact of Protected Areas on Livelihoods and Community Development', <i>Global Ecology and Conservation</i>, 22. 
+            <a href="https://www.sciencedirect.com/science/article/pii/S235198941930561X" target="_blank">//doi.org/10.1016/j.gecco.2020.e00909</a></li>
+        <li id="ref26">
+            IUCN and UNEP-WCMC (2022). <i>Conservation Protected Areas</i>. Cambridge, UK: UNEP-WCMC. Available at: 
+            <a href="www.protectedplanet.net" target="_blank">www.protectedplanet.net</a>. Accessed through Global Forest Watch (20 November 2024). 
+            <a href="www.globalforestwatch.org" target="_blank"> www.globalforestwatch.org</a>.</li>
+        <li id="ref27">
+           Naidoo, RN (2013). 'Mining: South Africa's Legacy and Burden in the Context of Occupational Respiratory Diseases', <i>Global Health Action</i>, 6(10). 
+           <a href="https://pubmed.ncbi.nlm.nih.gov/23433246/" target="_blank">doi: 10.3402/gha.v6i0.20512</a></li>
+        <li id="ref28">
+            Africa Mining IQ (2023). <i>Mines in South Africa</i>. Available at: 
+            <a href="https://projectsiq.co.za/mines-in-south-africa.htm#:~:text=South%20Africa%20is%20a%20mineral,for%20international%20and%20local%20investors " target="_blank">https://projectsiq.co.za/mines-in-south-africa.htm#:~:text=South%20Africa%20is%20a%20mineral,for%20international%20and%20local%20investors</a>
+            (Accessed: 10 November 2024).</li>
+        <li id="ref29">
+            Pretty, MM & Odeku, KO (2017). 'Harmful Mining Activities, Environmental Impacts and Effects in the Mining Communities in South Africa: a Critical Perspective', <i>Environmental Economics</i>, 8(4) pp 14-24. 
+            <a href="https://www.researchgate.net/publication/321767030_Harmful_mining_activities_environmental_impacts_and_effects_in_the_mining_communities_in_South_Africa_a_critical_perspective" target="_blank">doi:10.21511/ee.08(4).2017.02</a></li>
+        <li id="ref30">
+            Human Rights Commission (2016). <i>National Hearing on the Underlying Socio-economic Challenges of Mining-affected Communities in South Africa</i>. South Africa. Available at: 
+            <a href="https://www.sahrc.org.za/home/21/files/SAHRC%20Mining%20communities%20report%20FINAL.pdf" target="_blank">https://www.sahrc.org.za/home/21/files/SAHRC%20Mining%20communities%20report%20FINAL.pdf</a>
+            (Accessed: 10 November 2024).</li>
+        <li id="ref31">
+            Minerals Council South Africa (nd). <i>Coal Location and Geography</i>. Available at:
+            <a href="https://www.mineralscouncil.org.za/sa-mining/coal" target="_blank">https://www.mineralscouncil.org.za/sa-mining/coal</a>
+             (Accessed 16 November, 2024).</li>
+        <li id="ref32">
+            Maze, K, Driver, A, Brownlie, S (2009). <i>Mining and Biodiversity in South Africa: A Discussion Paper</i>. United States: Forest Trends. Available at: 
+            <a href="https://www.forest-trends.org/wp-content/uploads/bbop/28mining-and-biodiversity-in-south-africa-pdf.pdf" target="_blank">https://www.forest-trends.org/wp-content/uploads/bbop/28mining-and-biodiversity-in-south-africa-pdf.pdf</a>
+            (Accessed 10 November 2024).</li>
+        <li id="ref33">
+            Department of Forestry, Fisheries, and the Environment (2018). <i>State of the Forests Report: South Africa</i>. South Africa: ITC. Available at: 
+            <a href="https://itc-sa.org/2022/wordpress/wp-content/uploads/2022/08/stateofforests.southafricareport2018.pdf" target="_blank">https://itc-sa.org/2022/wordpress/wp-content/uploads/2022/08/stateofforests.southafricareport2018.pdf</a> 
+            (Accessed 14 November 2024).</li>
+        <li id="ref35">
+            Global Forest Watch (2023). <i>South Africa Deforestation Rates and Statistics</i>. Available at: 
+            <a href="https://www.globalforestwatch.org/dashboards/country/ZAF/?map=eyJjYW5Cb3VuZCI6dHJ1ZX0%3D" target="_blank">https://www.globalforestwatch.org/dashboards/country/ZAF/?map=eyJjYW5Cb3VuZCI6dHJ1ZX0%3D</a> 
+            (Accessed 15 November 2024).</li>
+        <li id="ref3">
+            Dye, P & Versfield, D (2007). 'Managing the Hydrological Impacts of South African Plantation Forests: An Overview', <i>Forest Ecology and Management</i>, 251 (1-2) pp 121-128. doi: 
+            <a href="https://www.sciencedirect.com/science/article/pii/S0378112707004720" target="_blank">//doi.org/10.1016/j.foreco.2007.06.013</a></li>
+        <li id="ref36">
+            Bennett, BM & Kruger, KJ (2013). 'Ecology, Forestry and the Debate Over Exotic Trees in South Africa', <i>Journal of Historical Geography</i>, 42 pp 100-109. doi: 
+            <a href="https://www.sciencedirect.com/science/article/pii/S0305748813000765">//doi.org/10.1016/j.jhg.2013.06.004</a></li>
+    </ol>
+</footer>
+
+</body>
+</html>
+
